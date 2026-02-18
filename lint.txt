@@ -1,0 +1,163 @@
+﻿
+> file-storage@0.1.0 lint
+> eslint
+
+
+E:\enc-storage\file-storage\app\api\auth\change-login-password\route.ts
+  29:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\auth\login\route.ts
+  62:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\auth\logout\route.ts
+  11:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\auth\recover\complete\route.ts
+  25:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\auth\recover\init\route.ts
+  46:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\auth\rotate-keys\route.ts
+  29:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\auth\session\route.ts
+  18:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:12  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\auth\signup\route.ts
+   6:8   warning  'crypto' is defined but never used        @typescript-eslint/no-unused-vars
+  60:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\files\delete\route.ts
+  22:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\files\list\route.ts
+  20:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:22  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  31:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:26  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\files\rekey\route.ts
+  16:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:22  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  29:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:26  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  49:49  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  68:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\files\share\[token]\download\route.ts
+  5:8  warning  'File' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\files\share\[token]\route.ts
+  3:8   warning  'File' is defined but never used                     @typescript-eslint/no-unused-vars
+  5:10  warning  'getPresignedDownloadUrl' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\api\files\share\route.ts
+  21:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  78:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\files\shared-links\route.ts
+  11:27  warning  'req' is defined but never used           @typescript-eslint/no-unused-vars
+  18:24  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\files\upload\route.ts
+  18:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  83:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\user\me\route.ts
+   7:27  warning  'req' is defined but never used           @typescript-eslint/no-unused-vars
+  16:24  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\api\user\update\route.ts
+  17:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:12  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\dashboard\page.tsx
+   26:28  warning  'CardTitle' is defined but never used                                                                             @typescript-eslint/no-unused-vars
+   26:39  warning  'CardDescription' is defined but never used                                                                       @typescript-eslint/no-unused-vars
+   34:9   warning  'router' is assigned a value but never used                                                                       @typescript-eslint/no-unused-vars
+   49:10  warning  'selectedFile' is assigned a value but never used                                                                 @typescript-eslint/no-unused-vars
+  146:50  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  161:72  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  165:54  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  196:73  warning  'e' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+  214:15  warning  'e' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+  266:21  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  326:6   warning  React Hook useEffect has a missing dependency: 'performUpload'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  352:80  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\forgot-password\page.tsx
+   65:24   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  110:21   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  126:24   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  211:21   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  289:84   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  327:100  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  332:108  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  366:66   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\login\page.tsx
+  124:21  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  152:29  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  163:29  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  176:69  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  202:67  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  203:7   error  'bgClass' is never reassigned. Use 'const' instead               prefer-const
+  211:38  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\onboarding\page.tsx
+   7:16  warning  'Lock' is defined but never used          @typescript-eslint/no-unused-vars
+  40:16  warning  'err' is defined but never used           @typescript-eslint/no-unused-vars
+  51:22  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  88:14  warning  'err' is defined but never used           @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\app\page.tsx
+   69:53  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+   73:76  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+  204:58  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  210:64  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  215:86  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  215:94  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+
+E:\enc-storage\file-storage\app\share\[token]\page.tsx
+   14:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   49:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  111:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\app\signup\page.tsx
+   16:9   warning  'router' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  136:19  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  163:21  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  266:33  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  277:37  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  344:67  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  345:7   error    'bgClass' is never reassigned. Use 'const' instead  prefer-const
+  353:38  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\components\dashboard\NavItem.tsx
+  3:80  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\components\dashboard\SecuritySettings.tsx
+  129:23  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  179:30  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+E:\enc-storage\file-storage\components\ui\ConfirmModal.tsx
+  5:25  warning  'X' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\lib\db.ts
+  10:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\enc-storage\file-storage\lib\email-templates.ts
+  120:20  warning  'email' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\enc-storage\file-storage\scripts\set-cors.js
+  2:44  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:1   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+Γ£û 93 problems (66 errors, 27 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+
