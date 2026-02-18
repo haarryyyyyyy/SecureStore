@@ -6,6 +6,7 @@ import {
   ShieldCheck, ArrowRight, Lock, 
   CheckCircle2, ArrowDown, Hash, Key, Mail, Copy, Download
 } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { generateSalt, deriveMasterKey, createKeyVerifier, generateRecoveryCode, deriveRecoveryKey, encryptMasterKeyWithRecoveryKey } from '@/lib/crypto';
 import { ToastContainer, ToastMessage } from '@/components/ui/Toast';
 import { Button } from '@/components/ui/Button';
@@ -204,8 +205,8 @@ export default function SignupPage() {
       <div className="min-h-screen flex items-center justify-center bg-[#F3F4F6] p-4 relative overflow-hidden">
          <ToastContainer toasts={toasts} removeToast={removeToast} />
          <div className="max-w-xl w-full bg-white rounded-3xl shadow-2xl p-10 text-center relative z-10 animate-fade-in-up">
-            <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-8 shadow-sm">
-              <ShieldCheck size={40} className="text-green-600" />
+            <div className="mx-auto w-20 h-20 bg-blue-100/50 rounded-full flex items-center justify-center mb-8 shadow-sm">
+              <BrandLogo size={40} className="text-blue-600" />
             </div>
             
             <h2 className="text-3xl font-extrabold text-slate-800 mb-3 tracking-tight">Account Created!</h2>
@@ -256,7 +257,7 @@ export default function SignupPage() {
       {/* LEFT: Form */}
       <div className="flex flex-col justify-center px-8 py-12 lg:px-20 border-r border-slate-100">
         <Link href="/" className="flex items-center gap-2 mb-10 w-fit">
-          <div className="rounded-lg bg-blue-600 p-1.5 text-white"><ShieldCheck size={20} /></div>
+          <div className="rounded-lg bg-blue-600/10 p-1.5 text-blue-600"><BrandLogo size={20} /></div>
           <span className="text-lg font-bold">SecureStore</span>
         </Link>
         <div className="max-w-md w-full mx-auto">

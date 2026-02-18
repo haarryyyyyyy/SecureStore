@@ -7,6 +7,7 @@ import {
   ShieldCheck, ArrowRight, Lock, 
   CheckCircle2, ArrowDown, FileLock, KeyRound, FileText, Mail
 } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { deriveMasterKey, createKeyVerifier } from '@/lib/crypto';
 import { ToastContainer, ToastMessage } from '@/components/ui/Toast';
 import { Button } from '@/components/ui/Button';
@@ -147,7 +148,7 @@ export default function LoginPage() {
       {/* LEFT: Form */}
       <div className="flex flex-col justify-center px-8 py-12 lg:px-20 border-r border-slate-100">
         <Link href="/" className="flex items-center gap-2 mb-10 w-fit">
-          <div className="rounded-lg bg-blue-600 p-1.5 text-white"><ShieldCheck size={20} /></div>
+          <div className="rounded-lg bg-blue-600/10 p-1.5 text-blue-600"><BrandLogo size={20} /></div>
           <span className="text-lg font-bold">SecureStore</span>
         </Link>
         <div className="max-w-md w-full mx-auto">

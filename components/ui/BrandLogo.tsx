@@ -1,0 +1,46 @@
+import React from 'react';
+
+export function BrandLogo({ size = 24, className = "" }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 48 48" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path 
+        d="M24 4L6 12V22C6 33.2 13.8 43.6 24 46C34.2 43.6 42 33.2 42 22V12L24 4Z" 
+        fill="currentColor"
+        className="text-blue-600"
+      />
+      <path 
+        d="M24 46C13.8 43.6 6 33.2 6 22V12L24 4V46Z" 
+        fill="black" 
+        fillOpacity="0.1"
+      />
+      <rect 
+        x="16" 
+        y="18" 
+        width="16" 
+        height="12" 
+        rx="2" 
+        fill="white" 
+      />
+      <path 
+        d="M20 18V15C20 12.7909 21.7909 11 24 11C26.2091 11 28 12.7909 28 15V18" 
+        stroke="white" 
+        strokeWidth="3" 
+        strokeLinecap="round"
+      />
+      <circle 
+        cx="24" 
+        cy="24" 
+        r="2" 
+        fill="currentColor" 
+        className="text-blue-600"
+      />
+    </svg>
+  );
+}

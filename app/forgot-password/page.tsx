@@ -7,6 +7,7 @@ import {
   ShieldCheck, ArrowRight, Loader2, 
   AlertCircle, CheckCircle2, Lock, RefreshCw, Mail, Download,
 } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   deriveRecoveryKey, unwrapFileKey, wrapFileKey, 
@@ -236,8 +237,8 @@ export default function ForgotPasswordPage() {
       return (
         <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-900 p-4">
              <div className="max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-100 p-8 text-center">
-                <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle2 size={40} className="text-green-600" />
+                <div className="mx-auto w-20 h-20 bg-blue-100/50 rounded-full flex items-center justify-center mb-6">
+                    <BrandLogo size={40} className="text-blue-600" />
                 </div>
                 <h2 className="text-2xl font-extrabold mb-4">Access Restored</h2>
                 <p className="text-slate-500 mb-8">Your vault has been re-keyed and secured. <br/>Please save your new recovery code.</p>
@@ -274,7 +275,7 @@ export default function ForgotPasswordPage() {
           </Link>
           
           <div className="flex items-center gap-2 mb-6">
-                 <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><ShieldCheck size={24} /></div>
+                 <div className="p-2 bg-blue-600/10 text-blue-600 rounded-lg"><BrandLogo size={24} /></div>
                  <span className="font-bold text-slate-900">SecureStore</span>
           </div>
 

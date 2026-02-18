@@ -5,9 +5,10 @@ import { ConfirmModal } from '@/components/ui/ConfirmModal';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { 
-  LayoutGrid, Share2, Trash2, Search, Plus, LogOut, 
-  ShieldCheck, Lock, User as UserIcon, X, Loader2, Copy, CheckCircle, Save, Menu
+  ShieldCheck, Lock, User as UserIcon, X, Loader2, Copy, CheckCircle, Save, Menu,
+  LayoutGrid, Share2, Trash2, Search, Plus, LogOut
 } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { 
   generateFileKey, encryptFile, wrapFileKey, unwrapFileKey, buf2hex
 } from '@/lib/crypto';
@@ -699,11 +700,11 @@ export default function DashboardPage() {
           {/* Logo Area */}
           <div className="h-16 flex items-center px-6 border-b border-slate-100">
              <div className="flex items-center gap-3">
-                <div className="bg-blue-600 p-2 rounded-xl text-white shadow-lg shadow-blue-600/20">
-                <ShieldCheck size={24} strokeWidth={2.5} />
+                <div className="bg-blue-600/10 p-2 rounded-xl text-blue-600">
+                  <BrandLogo size={28} />
                 </div>
                 <div>
-                <h1 className="font-bold text-lg tracking-tight">Vault<span className="text-blue-600">App</span></h1>
+                <h1 className="font-bold text-lg tracking-tight">Secure<span className="text-blue-600">Store</span></h1>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Zero Knowledge</p>
                 </div>
              </div>
@@ -1045,8 +1046,8 @@ export default function DashboardPage() {
             >
               <div className="h-16 flex items-center justify-between px-6 border-b border-slate-100">
                   <div className="flex items-center gap-3">
-                      <div className="bg-blue-600 p-2 rounded-xl text-white">
-                          <ShieldCheck size={20} strokeWidth={2.5} />
+                      <div className="bg-blue-600/10 p-2 rounded-xl text-blue-600">
+                          <BrandLogo size={24} />
                       </div>
                       <span className="font-bold text-lg">SecureStore</span>
                   </div>
