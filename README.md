@@ -20,7 +20,7 @@ SecureStore is a secure, client-side encrypted file storage application built wi
 -   **Styling**: Tailwind CSS
 -   **Database**: MongoDB (via Mongoose)
 -   **Animations**: Framer Motion
--   **Email**: Nodemailer (SMTP)
+-   **Email**: Resend (Transactional API)
 -   **Icons**: Lucide React
 
 ## Getting Started
@@ -41,10 +41,8 @@ SecureStore is a secure, client-side encrypted file storage application built wi
     ```env
     MONGODB_URI=mongodb://localhost:27017/securestore
     NEXT_PUBLIC_APP_URL=http://localhost:3000
-    EMAIL_HOST=smtp.example.com
-    EMAIL_PORT=587
-    EMAIL_USER=your-email@example.com
-    EMAIL_PASS=your-email-password
+    RESEND_API_KEY=re_123456789
+    EMAIL_FROM=onboarding@resend.dev
     JWT_SECRET=your-super-secret-jwt-key
     ```
 
