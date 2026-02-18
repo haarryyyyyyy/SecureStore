@@ -165,6 +165,7 @@ export default function DashboardPage() {
     
               const mappedFiles = data.files.map((f: any) => ({
                 id: f._id,
+                _id: f._id,
                 name: f.name,
                 size: (f.size / 1024 / 1024).toFixed(2) + ' MB',
                 type: f.mimeType,
