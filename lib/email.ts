@@ -7,7 +7,7 @@ export const sendEmail = async ({ to, subject, html }: { to: string, subject: st
         const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
         const { data, error } = await resend.emails.send({
-            from: `SecureStore <${fromEmail}>`,
+            from: `SafeCloud <${fromEmail}>`,
             to: [to],
             subject,
             html,

@@ -279,7 +279,7 @@ export default function ForgotPasswordPage() {
           
           <div className="flex items-center gap-2 mb-6">
                  <div className="p-2 bg-blue-600/10 text-blue-600 rounded-lg"><BrandLogo size={24} /></div>
-                 <span className="font-bold text-slate-900">SecureStore</span>
+                 <span className="font-bold text-slate-900">SafeCloud</span>
           </div>
 
           <h1 className="text-2xl font-extrabold mb-2 text-slate-900">Reset Password</h1>

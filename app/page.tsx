@@ -36,7 +36,7 @@ export default function HomePage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
               <BrandLogo size={28} />
             </div>
-            <span className="text-xl font-extrabold tracking-tight text-slate-900">SecureStore</span>
+            <span className="text-xl font-extrabold tracking-tight text-slate-900">SafeCloud</span>
           </Link>
 
           {/* Links */}

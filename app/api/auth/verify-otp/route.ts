@@ -70,7 +70,7 @@ export async function POST(req: Request) {
         // 3. Send Welcome Email
         await sendEmail({
             to: email,
-            subject: "Welcome to SecureStore",
+            subject: "Welcome to SafeCloud",
             html: emailTemplates.welcomeEmail(email)
         });
 

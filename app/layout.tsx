@@ -9,7 +9,7 @@ const primaryFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "SecureStore - Zero Knowledge Cloud Storage",
+  title: "SafeCloud - Zero Knowledge Cloud Storage",
   description: "Secure, client-side encrypted file storage.",
 };
 

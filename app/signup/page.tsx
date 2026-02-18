@@ -260,7 +260,7 @@ export default function SignupPage() {
       <div className="flex flex-col justify-center px-8 py-12 lg:px-20 border-r border-slate-100">
         <Link href="/" className="flex items-center gap-2 mb-10 w-fit">
           <div className="rounded-lg bg-blue-600/10 p-1.5 text-blue-600"><BrandLogo size={20} /></div>
-          <span className="text-lg font-bold">SecureStore</span>
+          <span className="text-lg font-bold">SafeCloud</span>
         </Link>
         <div className="max-w-md w-full mx-auto">
           <h1 className="text-3xl font-extrabold mb-2">Create your vault</h1>

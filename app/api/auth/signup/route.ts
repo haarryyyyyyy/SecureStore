@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     // 4. Send OTP Email
     await sendEmail({
       to: email,
-      subject: "Verify your email - SecureStore",
+      subject: "Verify your email - SafeCloud",
       html: emailTemplates.otpEmail(otp)
     });
 

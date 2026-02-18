@@ -704,7 +704,7 @@ export default function DashboardPage() {
                   <BrandLogo size={28} />
                 </div>
                 <div>
-                <h1 className="font-bold text-lg tracking-tight">Secure<span className="text-blue-600">Store</span></h1>
+                <h1 className="font-bold text-lg tracking-tight">Safe<span className="text-blue-600">Cloud</span></h1>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Zero Knowledge</p>
                 </div>
              </div>
@@ -1049,7 +1049,7 @@ export default function DashboardPage() {
                       <div className="bg-blue-600/10 p-2 rounded-xl text-blue-600">
                           <BrandLogo size={24} />
                       </div>
-                      <span className="font-bold text-lg">SecureStore</span>
+                      <span className="font-bold text-lg">SafeCloud</span>
                   </div>
                   <button onClick={() => setIsSidebarOpen(false)} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full">
                       <X size={24} />

@@ -91,7 +91,7 @@ const Layout = (content: string) => `
         <div style="${styles.container}">
             <div style="${styles.header}">
                 <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}" style="${styles.logo}">
-                    SecureStore
+                    SafeCloud
                 </a>
             </div>
             <div style="${styles.body}">
@@ -99,7 +99,7 @@ const Layout = (content: string) => `
             </div>
             <div style="${styles.footer}">
                 <p style="margin: 0 0 8px 0;">Secured by Zero-Knowledge Encryption</p>
-                <p style="margin: 0;">&copy; ${new Date().getFullYear()} SecureStore. All rights reserved.</p>
+                <p style="margin: 0;">&copy; ${new Date().getFullYear()} SafeCloud. All rights reserved.</p>
             </div>
         </div>
     </body>
@@ -109,7 +109,7 @@ const Layout = (content: string) => `
 export const emailTemplates = {
     otpEmail: (otp: string) => Layout(`
         <h1 style="${styles.h1}">Verify Your Email</h1>
-        <p style="${styles.text}">Thank you for creating an account with SecureStore. To complete your registration, please verify your email address.</p>
+        <p style="${styles.text}">Thank you for creating an account with SafeCloud. To complete your registration, please verify your email address.</p>
         <p style="${styles.text}">Enter the following code to activate your account:</p>
         
         <div style="${styles.otpBox}">${otp}</div>
@@ -118,7 +118,7 @@ export const emailTemplates = {
     `),
 
     welcomeEmail: (email: string) => Layout(`
-        <h1 style="${styles.h1}">Welcome to SecureStore</h1>
+        <h1 style="${styles.h1}">Welcome to SafeCloud</h1>
         <p style="${styles.text}">Your secure vault has been successfully set up.</p>
         <p style="${styles.text}">We use industry-standard Zero-Knowledge encryption to protect your files. This means only you hold the keys to decrypt your data.</p>
         
@@ -134,7 +134,7 @@ export const emailTemplates = {
 
     passwordChangeEmail: () => Layout(`
         <h1 style="${styles.h1}">Password Changed</h1>
-        <p style="${styles.text}">The password for your SecureStore account was recently changed.</p>
+        <p style="${styles.text}">The password for your SafeCloud account was recently changed.</p>
         
         <div style="${styles.alertBox}">
             <strong>Security Alert:</strong> If you did not make this change, your account may be compromised. Please assume your vault data is at risk and contact support or use your Recovery Code immediately.
