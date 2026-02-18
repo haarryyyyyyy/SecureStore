@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { 
-    CheckCircle, Save, Download, Lock, RefreshCw, ShieldCheck 
+    CheckCircle, Save, Download, Lock, RefreshCw, ShieldCheck,
+    Eye, EyeOff
 } from 'lucide-react';
 import { 
     generateSalt, deriveMasterKey, createKeyVerifier, unwrapFileKey, wrapFileKey, 
@@ -25,6 +26,9 @@ export function SecuritySettings({ files, cachedMasterKey, setCachedMasterKey, a
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isChangingPassword, setIsChangingPassword] = useState(false);
     const [passwordProgress, setPasswordProgress] = useState(0); // 0-100
+    const [showCurrent, setShowCurrent] = useState(false);
+    const [showNew, setShowNew] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
 
     // --- RECOVERY CODE STATE ---
     const [newRecoveryCode, setNewRecoveryCode] = useState<string | null>(null);
@@ -194,32 +198,47 @@ export function SecuritySettings({ files, cachedMasterKey, setCachedMasterKey, a
                         <form onSubmit={handleChangePassword} className="space-y-5 max-w-lg">
                             <Input
                                 label="Current Password"
-                                type="password"
+                                type={showCurrent ? "text" : "password"}
                                 placeholder="Enter current password"
                                 value={currentPassword}
                                 onChange={e => setCurrentPassword(e.target.value)}
                                 required
                                 icon={<Lock size={18} />}
+                                rightElement={
+                                    <button type="button" onClick={() => setShowCurrent(!showCurrent)} className="text-slate-400 hover:text-slate-600 focus:outline-none">
+                                        {showCurrent ? <EyeOff size={16} /> : <Eye size={16} />}
+                                    </button>
+                                }
                             />
 
                             <div className="grid grid-cols-2 gap-4">
                                 <Input
                                     label="New Password"
-                                    type="password"
+                                    type={showNew ? "text" : "password"}
                                     placeholder="Min 8 chars"
                                     value={newPassword}
                                     onChange={e => setNewPassword(e.target.value)}
                                     required
                                     minLength={8}
+                                    rightElement={
+                                        <button type="button" onClick={() => setShowNew(!showNew)} className="text-slate-400 hover:text-slate-600 focus:outline-none">
+                                            {showNew ? <EyeOff size={16} /> : <Eye size={16} />}
+                                        </button>
+                                    }
                                 />
                                 <Input
                                     label="Confirm New"
-                                    type="password"
+                                    type={showConfirm ? "text" : "password"}
                                     placeholder="Repeat password"
                                     value={confirmPassword}
                                     onChange={e => setConfirmPassword(e.target.value)}
                                     required
                                     minLength={8}
+                                    rightElement={
+                                        <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="text-slate-400 hover:text-slate-600 focus:outline-none">
+                                            {showConfirm ? <EyeOff size={16} /> : <Eye size={16} />}
+                                        </button>
+                                    }
                                 />
                             </div>
 

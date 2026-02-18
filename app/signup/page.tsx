@@ -4,7 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { 
   ShieldCheck, ArrowRight, Lock, 
-  CheckCircle2, ArrowDown, Hash, Key, Mail, Copy, Download
+  CheckCircle2, ArrowDown, Hash, Key, Mail, Copy, Download,
+  Eye, EyeOff
 } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { generateSalt, deriveMasterKey, createKeyVerifier, generateRecoveryCode, deriveRecoveryKey, encryptMasterKeyWithRecoveryKey } from '@/lib/crypto';
@@ -30,6 +31,7 @@ export default function SignupPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const [animStep, setAnimStep] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Recovery Code State
   const [recoveryCode, setRecoveryCode] = useState<string | null>(null);
@@ -281,12 +283,21 @@ export default function SignupPage() {
                 <div>
                     <Input 
                       label="Password" 
-                      type="password" 
+                      type={showPassword ? "text" : "password"} 
                       value={form.password} 
                       error={errors.password} 
                       icon={<Lock size={18} />}
                       onChange={(e) => setForm({...form, password: e.target.value})}
                       className={isShaking && !!errors.password ? 'animate-shake' : ''}
+                      rightElement={
+                        <button
+                          type="button"
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="text-slate-400 hover:text-slate-600 transition-colors focus:outline-none"
+                        >
+                          {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                        </button>
+                      }
                     />
                     <div className="text-xs text-slate-400 mt-2 pl-1 flex flex-wrap gap-2">
                         <span className={/[A-Z]/.test(form.password) ? "text-green-600 font-bold" : ""}>• Upper</span>

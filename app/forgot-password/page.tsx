@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { 
   ShieldCheck, ArrowRight, Loader2, 
   AlertCircle, CheckCircle2, Lock, RefreshCw, Mail, Download,
+  Eye, EyeOff
 } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,6 +27,8 @@ export default function ForgotPasswordPage() {
   const [recoveryCode, setRecoveryCode] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   
   // Validation State
   const [errors, setErrors] = useState<{email?: string; recoveryCode?: string; newPassword?: string; confirmPassword?: string}>({});
@@ -325,13 +328,19 @@ export default function ForgotPasswordPage() {
                     
                     <form onSubmit={handleReset} className="space-y-6" noValidate>
                         <InputGroup 
-                            label="New Password" type="password" value={newPassword} onChange={(e: any) => setNewPassword(e.target.value)} icon={<Lock size={18} />} autoFocus 
+                            label="New Password" type={showPassword ? "text" : "password"} value={newPassword} onChange={(e: any) => setNewPassword(e.target.value)} icon={<Lock size={18} />} autoFocus 
                             error={errors.newPassword} isShaking={isShaking && !!errors.newPassword}
+                            onToggle={() => setShowPassword(!showPassword)}
+                            showPassword={showPassword}
+                            isPassword
                         />
 
                         <InputGroup 
-                            label="Confirm Password" type="password" value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} icon={<Lock size={18} />}
+                            label="Confirm Password" type={showConfirmPassword ? "text" : "password"} value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} icon={<Lock size={18} />}
                             error={errors.confirmPassword} isShaking={isShaking && !!errors.confirmPassword}
+                            onToggle={() => setShowConfirmPassword(!showConfirmPassword)}
+                            showPassword={showConfirmPassword}
+                            isPassword
                         />
                         
                         {generalError && <ErrorMessage msg={generalError} />}
@@ -364,7 +373,7 @@ export default function ForgotPasswordPage() {
 
 // --- COMPONENTS ---
 
-function InputGroup({ label, error, icon, isShaking, ...props }: any) {
+function InputGroup({ label, error, icon, isShaking, isPassword, showPassword, onToggle, ...props }: any) {
   return (
     <div>
       <label className="block text-sm font-bold text-slate-700 mb-1.5">{label}</label>
@@ -375,9 +384,18 @@ function InputGroup({ label, error, icon, isShaking, ...props }: any) {
                 isShaking ? 'animate-shake border-red-500 focus:ring-red-500/10' : 
                 error ? 'border-red-500 focus:ring-red-500/10' : 
                 'border-slate-200 focus:border-blue-600 focus:ring-blue-50/50'
-            }`} 
+            } ${icon ? 'pl-12' : ''} ${isPassword ? 'pr-12' : ''}`} 
         />
-        {icon && <div className={`absolute right-4 top-3.5 transition-colors ${error ? 'text-red-400' : 'text-slate-400 group-focus-within:text-blue-600'}`}>{icon}</div>}
+        {icon && <div className={`absolute left-4 top-3.5 transition-colors ${error ? 'text-red-400' : 'text-slate-400 group-focus-within:text-blue-600'}`}>{icon}</div>}
+        {isPassword && (
+          <button 
+            type="button" 
+            onClick={onToggle}
+            className="absolute right-4 top-3.5 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none"
+          >
+            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+          </button>
+        )}
       </div>
       {error && <p className="text-red-500 text-xs mt-1 font-medium animate-slide-down">{error}</p>}
     </div>

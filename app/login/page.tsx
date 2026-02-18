@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { 
   ShieldCheck, ArrowRight, Lock, 
-  CheckCircle2, ArrowDown, FileLock, KeyRound, FileText, Mail
+  CheckCircle2, ArrowDown, FileLock, KeyRound, FileText, Mail,
+  Eye, EyeOff
 } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { deriveMasterKey, createKeyVerifier } from '@/lib/crypto';
@@ -34,6 +35,7 @@ export default function LoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const [animStep, setAnimStep] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   // --- TOAST STATE ---
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
@@ -169,12 +171,21 @@ export default function LoginPage() {
             <div>
               <Input 
                 label="Password" 
-                type="password" 
+                type={showPassword ? "text" : "password"} 
                 value={form.password} 
                 error={errors.password} 
                 icon={<Lock size={18} />}
                 onChange={(e) => setForm({...form, password: e.target.value})}
                 className={isShaking && !!errors.password ? 'animate-shake' : ''}
+                rightElement={
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="text-slate-400 hover:text-slate-600 transition-colors focus:outline-none"
+                  >
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                }
               />
               <div className="flex justify-end mt-2">
                 <Link href="/forgot-password" className="text-sm font-bold text-blue-600 hover:text-blue-500 transition-colors">
