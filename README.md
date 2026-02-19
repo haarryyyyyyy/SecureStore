@@ -1,6 +1,6 @@
-# SecureStore - Zero Knowledge Cloud Storage
+# SafeCloud - Zero Knowledge Cloud Storage
 
-SecureStore is a secure, client-side encrypted file storage application built with Next.js 14. It ensures that only you have access to your files by encrypting them before they ever leave your device.
+SafeCloud is a secure, client-side encrypted file storage application built with Next.js 14. It ensures that only you have access to your files by encrypting them before they ever leave your device.
 
 ## Features
 
@@ -27,8 +27,8 @@ SecureStore is a secure, client-side encrypted file storage application built wi
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/securestore.git
-    cd securestore
+    git clone https://github.com/yourusername/safecloud.git
+    cd safecloud
     ```
 
 2.  **Install dependencies**:
@@ -39,7 +39,7 @@ SecureStore is a secure, client-side encrypted file storage application built wi
 3.  **Environment Setup**:
     Create a `.env.local` file with the following variables:
     ```env
-    MONGODB_URI=mongodb://localhost:27017/securestore
+    MONGODB_URI=mongodb://localhost:27017/safecloud
     NEXT_PUBLIC_APP_URL=http://localhost:3000
     RESEND_API_KEY=re_123456789
     EMAIL_FROM=onboarding@resend.dev

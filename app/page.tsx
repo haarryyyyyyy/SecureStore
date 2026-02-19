@@ -315,10 +315,10 @@ export default function HomePage() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <ShieldCheck size={20} className="text-slate-400" />
-            <span className="text-sm font-bold text-slate-700">SecureStore</span>
+            <span className="text-sm font-bold text-slate-700">SafeCloud</span>
           </div>
           <p className="text-sm text-slate-400">
-            &copy; 2026 SecureStore Inc. All rights reserved.
+            &copy; 2026 SafeCloud Inc. All rights reserved.
           </p>
         </div>
       </footer>
