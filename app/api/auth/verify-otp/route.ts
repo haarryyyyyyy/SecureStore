@@ -7,6 +7,7 @@ import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 import { sendEmail } from '@/lib/email';
 import { emailTemplates } from '@/lib/email-templates';
+import { EMAIL_SENDERS } from '@/lib/email-config';
 
 export async function POST(req: Request) {
     try {
@@ -68,12 +69,11 @@ export async function POST(req: Request) {
         }
 
         // 3. Send Welcome Email
-        const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
         await sendEmail({
             to: email,
             subject: "Welcome to SafeCloud",
             html: emailTemplates.welcomeEmail(email),
-            sender: { name: 'SafeCloud', email: `noreply@${domain}` }
+            sender: EMAIL_SENDERS.onboarding
         });
 
         // 4. Generate Auth Token

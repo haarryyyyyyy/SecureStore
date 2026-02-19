@@ -6,6 +6,7 @@ import bcrypt from 'bcryptjs';
 import { cookies } from 'next/headers';
 import { sendEmail } from '@/lib/email';
 import { emailTemplates } from '@/lib/email-templates';
+import { EMAIL_SENDERS } from '@/lib/email-config';
 
 export async function POST(req: Request) {
     try {
@@ -59,12 +60,11 @@ export async function POST(req: Request) {
         });
 
         // Send Recovery Confirmation
-        const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
         await sendEmail({
             to: decoded.email,
             subject: "Account Access Restored",
             html: emailTemplates.recoverySuccessEmail(),
-            sender: { name: 'SafeCloud Security', email: `security@${domain}` }
+            sender: EMAIL_SENDERS.security
         });
 
         return NextResponse.json({ message: 'Recovery complete' });

@@ -6,6 +6,7 @@ import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { sendEmail } from '@/lib/email';
 import { emailTemplates } from '@/lib/email-templates';
+import { EMAIL_SENDERS } from '@/lib/email-config';
 
 export async function POST(req: Request) {
   try {
@@ -49,12 +50,11 @@ export async function POST(req: Request) {
     );
 
     // 4. Send OTP Email
-    const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
     await sendEmail({
       to: email,
       subject: "Verify your email - SafeCloud",
       html: emailTemplates.otpEmail(otp),
-      sender: { name: 'SafeCloud Auth', email: `auth@${domain}` }
+      sender: EMAIL_SENDERS.auth
     });
 
     return NextResponse.json({ message: 'OTP sent' }, { status: 200 });
