@@ -4,7 +4,7 @@ import connectToDatabase from '@/lib/db';
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { serialize } from 'cookie';
+// import { serialize } from 'cookie'; // Removed unused import
 
 export async function POST(req: Request) {
   try {
@@ -34,28 +34,23 @@ export async function POST(req: Request) {
       { expiresIn: '7d' }
     );
 
-    // 3. Set Cookie
-    const cookie = serialize('auth_token', token, {
+    // 4. PREPARE RESPONSE
+    const response = NextResponse.json({
+      message: 'Logged in',
+      // Send Vault Params for Client-Side Derivation
+      vaultSalt: user.vaultSalt,
+      vaultVerifier: user.vaultVerifier,
+      isProfileComplete: user.isProfileComplete || false
+    }, { status: 200 });
+
+    // 3. Set Cookie using Next.js API
+    response.cookies.set('auth_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7,
       path: '/',
     });
-
-    // 4. RETURN THE PROFILE STATUS & VAULT PARAMS
-    const response = NextResponse.json({
-      message: 'Logged in',
-
-
-      // Send Vault Params for Client-Side Derivation
-      vaultSalt: user.vaultSalt,
-      vaultVerifier: user.vaultVerifier,
-
-      isProfileComplete: user.isProfileComplete || false
-    }, { status: 200 });
-
-    response.headers.set('Set-Cookie', cookie);
 
     return response;
 
