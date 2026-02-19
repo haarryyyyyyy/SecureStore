@@ -23,42 +23,6 @@ SafeCloud is a secure, client-side encrypted file storage application built with
 -   **Email**: Resend (Transactional API)
 -   **Icons**: Lucide React
 
-## Getting Started
-
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/yourusername/safecloud.git
-    cd safecloud
-    ```
-
-2.  **Install dependencies**:
-    ```bash
-    npm install
-    ```
-
-3.  **Environment Setup**:
-    Create a `.env.local` file with the following variables:
-    ```env
-    MONGODB_URI=mongodb://localhost:27017/safecloud
-    NEXT_PUBLIC_APP_URL=http://localhost:3000
-    RESEND_API_KEY=re_123456789
-    EMAIL_FROM=onboarding@resend.dev
-    JWT_SECRET=your-super-secret-jwt-key
-    ```
-
-4.  **Run the development server**:
-    ```bash
-    npm run dev
-    ```
-
-5.  **Open the app**:
-    Visit [http://localhost:3000](http://localhost:3000).
-
-## Architecture Highlights
-
--   **Client-Side Standard**: All encryption/decryption happens in the browser `Web Crypto API`.
--   **Key Management**: The master key is derived from your password and salt, never stored in plain text.
--   **Sidebar**: Responsive sidebar implementation with `framer-motion` for smooth mobile interactions.
 
 ## License
 
