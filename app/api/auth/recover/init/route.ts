@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         // 2. Generate Temporary Recovery Token
         // This allows the client to call the re-keying endpoints
         const recoveryToken = jwt.sign(
-            { userId: user._id, type: 'recovery' },
+            { userId: user._id, email: user.email, type: 'recovery' },
             process.env.JWT_SECRET!,
             { expiresIn: '15m' }
         );
