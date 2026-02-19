@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   ShieldCheck, Lock, User as UserIcon, X, Loader2, Copy, CheckCircle, Save, Menu,
-  LayoutGrid, Share2, Trash2, Search, Plus, LogOut
+  LayoutGrid, Share2, Trash2, Search, Plus, LogOut, LifeBuoy
 } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { 
@@ -726,6 +726,22 @@ export default function DashboardPage() {
         <div className="p-4 border-t border-slate-100 bg-slate-50/50">
             <UsageWidget storageUsage={storageUsage} storageLimit={STORAGE_LIMIT} />
         </div>
+        {/* Support Widget */}
+        <div className="px-4 pb-4">
+             <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                <div className="flex items-center gap-2 mb-1">
+                    <LifeBuoy size={16} className="text-slate-600" />
+                    <span className="font-bold text-xs text-slate-900 uppercase tracking-wider">Support</span>
+                </div>
+                <p className="text-[10px] text-slate-500 mb-2 leading-relaxed">
+                    Need help? Email our support team for assistance.
+                </p>
+                <a href="mailto:support@safe-cloud.app" className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    support@safe-cloud.app
+                </a>
+             </div>
+        </div>
+
       </aside>
 
       <main className="flex-1 flex flex-col h-screen overflow-hidden relative">
