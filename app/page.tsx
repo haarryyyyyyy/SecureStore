@@ -53,7 +53,7 @@ export default function HomePage() {
             </Link>
             <Link 
               href="/signup" 
-              className="rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all"
+              className="hidden md:block rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all"
             >
               Get Started
             </Link>
