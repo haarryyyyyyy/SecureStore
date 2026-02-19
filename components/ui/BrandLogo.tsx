@@ -1,6 +1,9 @@
 import React from 'react';
 
 export function BrandLogo({ size = 24, className = "" }) {
+  // Creating unique IDs for gradients to prevent conflicts if multiple logos are rendered
+  const gradientId = React.useId();
+  
   return (
     <svg 
       width={size} 
@@ -10,36 +13,28 @@ export function BrandLogo({ size = 24, className = "" }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
+      <defs>
+        <linearGradient id={`shieldGradient-${gradientId}`} x1="24" y1="4" x2="24" y2="48" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#3B82F6" />
+          <stop offset="1" stopColor="#1D4ED8" />
+        </linearGradient>
+        <linearGradient id={`cloudGradient-${gradientId}`} x1="24" y1="16" x2="24" y2="30" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#EFF6FF" />
+          <stop offset="1" stopColor="#BFDBFE" />
+        </linearGradient>
+      </defs>
+      
+      {/* Premium Shield Body */}
       <path 
-        d="M24 4L6 12V22C6 33.2 13.8 43.6 24 46C34.2 43.6 42 33.2 42 22V12L24 4Z" 
-        fill="currentColor"
-        className="text-blue-600"
+        d="M24 4L6 11V22.5C6 34.5 13.8 45 24 48C34.2 45 42 34.5 42 22.5V11L24 4Z" 
+        fill={`url(#shieldGradient-${gradientId})`}
       />
-      <path 
-        d="M24 46C13.8 43.6 6 33.2 6 22V12L24 4V46Z" 
-        fill="black" 
-        fillOpacity="0.1"
-      />
-      <rect 
-        x="16" 
-        y="18" 
-        width="16" 
-        height="12" 
-        rx="2" 
-        fill="white" 
-      />
-      <path 
-        d="M20 18V15C20 12.7909 21.7909 11 24 11C26.2091 11 28 12.7909 28 15V18" 
-        stroke="white" 
-        strokeWidth="3" 
-        strokeLinecap="round"
-      />
-      <circle 
-        cx="24" 
-        cy="24" 
-        r="2" 
-        fill="currentColor" 
-        className="text-blue-600"
+      
+      {/* Cloud Motif Inside */}
+      <path
+        d="M29 30H19C16.2 30 14 27.8 14 25C14 22.7 15.7 20.8 17.9 20.3C18.8 17.8 21.2 16 24 16C26.8 16 29.1 17.7 29.8 20.1C32.2 20.5 34 22.5 34 25C34 27.8 31.8 30 29 30Z"
+        fill={`url(#cloudGradient-${gradientId})`}
+        fillOpacity="0.9"
       />
     </svg>
   );

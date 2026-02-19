@@ -90,8 +90,9 @@ const Layout = (content: string) => `
     <body style="margin: 0; padding: 20px; background-color: #f1f5f9;">
         <div style="${styles.container}">
             <div style="${styles.header}">
-                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}" style="${styles.logo}">
-                    SafeCloud
+                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}" style="text-decoration: none;">
+                    <img src="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/icon.svg" alt="SafeCloud Logo" width="48" height="48" style="display: block; margin: 0 auto;" />
+                    <div style="${styles.logo}; margin-top: 10px;">SafeCloud</div>
                 </a>
             </div>
             <div style="${styles.body}">
