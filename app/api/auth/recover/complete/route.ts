@@ -59,10 +59,12 @@ export async function POST(req: Request) {
         });
 
         // Send Recovery Confirmation
+        const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
         await sendEmail({
             to: decoded.email,
             subject: "Account Access Restored",
-            html: emailTemplates.recoverySuccessEmail()
+            html: emailTemplates.recoverySuccessEmail(),
+            sender: { name: 'SafeCloud Security', email: `security@${domain}` }
         });
 
         return NextResponse.json({ message: 'Recovery complete' });

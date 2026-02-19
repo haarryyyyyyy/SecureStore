@@ -68,10 +68,12 @@ export async function POST(req: Request) {
         }
 
         // 3. Send Welcome Email
+        const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
         await sendEmail({
             to: email,
             subject: "Welcome to SafeCloud",
-            html: emailTemplates.welcomeEmail(email)
+            html: emailTemplates.welcomeEmail(email),
+            sender: { name: 'SafeCloud', email: `noreply@${domain}` }
         });
 
         // 4. Generate Auth Token

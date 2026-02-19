@@ -55,10 +55,12 @@ export async function POST(req: Request) {
         await user.save();
 
         // Send Security Alert Email
+        const domain = process.env.EMAIL_FROM?.split('@')[1] || 'safe-cloud.app';
         await sendEmail({
             to: user.email,
             subject: "Security Alert: Password Changed",
-            html: emailTemplates.passwordChangeEmail()
+            html: emailTemplates.passwordChangeEmail(),
+            sender: { name: 'SafeCloud Security', email: `security@${domain}` }
         });
 
         return NextResponse.json({ message: 'Password updated successfully' });
